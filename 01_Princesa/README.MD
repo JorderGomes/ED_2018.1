@@ -1,4 +1,3 @@
-
 ## O que voce fez?
 	- O escopo do programa
 
