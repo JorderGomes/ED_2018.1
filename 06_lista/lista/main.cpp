@@ -307,37 +307,7 @@ struct SList{
     Node * arrancaventa(Node * node , int value){
         return nullptr;
     }
-    /// equals
-    /// clonar
-/*
 
-  void _extract(stringsetream &&ss){
-}
-
-
-  vector( string serial){
-  stringsetream ss(serial);
-  int value;
-
-}
-
-
-
-    void _serialize( stringstream &ss, int id ){
-    if(id == _size){
-        return;
-    }
-    ss = _data[id];
-    _serialize(ss id + 1);
-}
-
-string serialize(){
-    stringstream ss;
-    _serialize(ss, 0);
-    return ss.str();
-}
-
-*/
 
 };
 
