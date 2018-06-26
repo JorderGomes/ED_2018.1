@@ -1,3 +1,7 @@
+#include <iostream>
+
+using namespace std;
+
 
 struct Vetor{
     int * _data;//bloco de dados
@@ -78,29 +82,7 @@ struct Vetor{
 int main()
 {
     // TESTES VECTOR CRIADOS PELO DAVID SENA
-    vector<int> v;
-    v.push_back(1);//1 elemento, 1 de capacidade
-    v.push_back(3);//2 elementos,2 de cap
-    v.push_back(5);//3 elementos,4 cap
 
-    v.reserve(100);
-    v.size();// 3
-    v.capacity();//100
-
-
-    v.front();//1
-    v.back();//5
-    v.front() = 6;
-
-    //posicoes - iteradores
-    //não são ponteiro, mas se comportam como se fosse
-
-    v.begin();//iterador pro primeiro
-    v.end();//iterador pro abismo
-
-    vector<string> frutas(5, "bananas");
-    vector<string> f2(frutas);
-    list<float> lfloat(10, 0.1f);
 
 
     Vetor pivet(5);
@@ -109,11 +91,6 @@ int main()
     pivet.push_back(7);
     cout << pivet.at(2);
     pivet.at(2) = 9;
-
-
-
-
-
 
     return 0;
 }

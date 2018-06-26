@@ -83,11 +83,11 @@ int main(){
                 janela.close();
             if(event.type == sf::Event::KeyPressed){
                 if(event.key.control && (event.key.code == sf::Keyboard::Z)){
-                    if(e.atual-- != e.ec.begin()) e.atual--;
+                    if(e.atual != e.ec.begin()) e.atual--;
                     cout << "control z" << endl;
                 }
                 else if(event.key.control && (event.key.code == sf::Keyboard::R)){
-                    if(e.atual++ != e.ec.end()) e.atual++;
+                    if(e.atual != prev(e.ec.end())) e.atual++;
                     cout << "control r" << endl;
                 }
                 else if((event.key.code >= sf::Keyboard::A) && (event.key.code <= sf::Keyboard::Z)){
@@ -99,6 +99,10 @@ int main(){
                     cout << tecla << endl;
                 }
                 else if((event.key.code == sf::Keyboard::Return)){
+                    e.ec.push_back(*e.atual);
+                    e.atual = e.ec.end();
+                    e.atual--;
+                    e.atual->texto.insert(e.atual->cursor, '\n');
                     cout << "enter" << endl;
                 }
                 else if((event.key.code == sf::Keyboard::Space)){
@@ -116,7 +120,6 @@ int main(){
                     cout << "backspace" << endl;
                 }
                 else if(event.key.code == sf::Keyboard::Delete){
-
                     e.ec.push_back(*e.atual);
                     e.atual = e.ec.end();
                     e.atual--;

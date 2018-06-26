@@ -22,9 +22,6 @@ struct SList{
     SList(){
         this->head = nullptr;
     }
-    /// serialize
-    /// slist
-    /// arrana venta
 
     void push_front(int value){ /// FUNCIONA,  CÓDIGO DAVID
         //this->head = new Node(value, this->head);
@@ -129,27 +126,27 @@ struct SList{
         _remove(head , value);
     }
 
-    Node * iremove(int value){ /// NOSSO REMOVE INTERATIVO / FUNCIONA
+    void iremove(int value){ /// NOSSO REMOVE INTERATIVO / FUNCIONA
         auto node = head;
         if(node == nullptr)
-            return nullptr;
+            return ;
         //se ele for o primeiro da lista
         if(head->value == value){
             auto aux = head;
             head = head->next;
             delete aux;
-            return head;
+            //return head;
         }
         while(node->next != nullptr){
             if(node->next->value == value){
                 auto aux = node->next;
                 node->next = node->next->next;
                 delete aux;
-                return node->next;
+                //return node->next;
             }
             node = node->next;
         }
-        return node;
+        //return node;
     }
 
     void Remove(int value){ /// COMPLEMENTAR IREMOVE
@@ -207,12 +204,6 @@ struct SList{
         Inserir_ordenado(value, head);
     }
 
-    /* RECURSIVO DO INSERIR ORDENADO   COM  RETORNO NODE
-    RECURSIVO DO INSERIR ORDENADO   COM  RETORNO VOID
-    SOMAR
-
-    */
-
     int _somar(Node * node){ /// NOSSO SOMAR FUNCIONA
         int value = 0;
         while (node != nullptr) {
@@ -239,7 +230,7 @@ struct SList{
         return min(head);
     }
 
-    ///INSERE ELEMNETO NA LISTA ORDENADA INTERATIVO
+    ///INSERE ELEMNETO NA LISTA ORDENADA INTERATIVO NOSSO
     void insert_iterativo(int value){
         if(head == nullptr || (head->value > value)){
             head = new Node(value, head);
@@ -258,19 +249,7 @@ struct SList{
 
     }
 
-    //    int *insert_iterativo(int value){
-    //        return insert_iterativo(value);
-    //    }
 
-    /// pushback com recursao OK
-    /// size OK
-    /// deletar tudo OK
-    /// vazamento
-    /// cortar rabo OK
-    /// inserir ordenado OK
-
-
-    /// 1 null
     Node * deletar_tudo(Node * node){ /// DELETAR TUDO NOSSO
         if(node == nullptr)
             return nullptr;

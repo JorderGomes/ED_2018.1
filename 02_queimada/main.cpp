@@ -38,9 +38,6 @@ void mostrar(vector<string>& mat){
 vector<Par> embaralhar(vector<Par> vet){
     for(int i = 0; i < (int) vet.size(); i++){
         int aleat = rand() % vet.size();
-//        int aux = vet[i];
-//        vet[i] = vet[aleat];
-//        vet[aleat] = aux;
         std::swap(vet[i], vet[aleat]);
     }
     return vet;
@@ -57,13 +54,14 @@ int queimar(vector<string> &mat, int l, int c, int num){
         return 0;
 
     mat[l][c] = '0' + (num%10);
+
     num++;
 
     mostrar(mat);
     int queimei = 1;
     for(Par p : embaralhar(getNeib(Par(l, c))))
         queimei += queimar(mat, p.l, p.c, num);
-        //queimar(mat, p.l, p.c, nivel + 1);
+
 
     if(mat[l][c] == '0'){
         mat[l][c] = '.';
@@ -95,10 +93,6 @@ int main()
     int total = queimar(mat, 0, 0, 0);
     cout << total << " arvores queimaram\n";
 
-
-    while(true){
-
-    }
 
     return 0;
 }

@@ -32,8 +32,10 @@ int main(){
 
     while(vet.size() != 1){
         mostrar(vet);
+
         vet.push_back(vet.front());
         vet.pop_front();
+
         vet.pop_front();
         mostrar(vet);
     }
